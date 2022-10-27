@@ -9,13 +9,15 @@ var $ = function (id) {
     return document.getElementById(id);
 };
 
+//Function to display number of employees
 function displayText() {
     "use strict";
-    var caption = $("displayinfo");
-    var caption_text = "Showing " + employees.length + " Employees";
-    caption.innerHTML = caption_text;
+    var show = $("displayinfo");
+    var show_text = "Showing " + employees.length + " Employees";
+    show.innerHTML = show_text;
 }
 
+//function to display the list of employees
 function displayTable() {
     "use strict";
     employees.forEach(employee => {
@@ -23,6 +25,7 @@ function displayTable() {
     });
 }
 
+//funtion to add an employee to the existing 2D array
 function addEmployee(rowList) {
     "use strict";
     var tableBody , row, cell, text, button;
@@ -48,6 +51,7 @@ function addEmployee(rowList) {
     tableBody.appendChild(row);
 }
 
+//function to delete an employee for the list
 function deleteRow(clickButton) {
     "use strict";
     var tableBody = document.getElementsByTagName("tbody").item(0);
@@ -57,6 +61,7 @@ function deleteRow(clickButton) {
     displayText();
 }
 
+//function that validates the values entered into text boxes
 function validate() {
     "use strict";
     var name, title, ext, required, requiredFields;
@@ -92,6 +97,7 @@ function validate() {
     return requiredFields;
 }
 
+//function that displays the values from the array
 function getFormValues() {
     "use strict";
     var name, title, ext;
@@ -103,6 +109,7 @@ function getFormValues() {
     return [name, title, ext];
 }
 
+//function that clears the values from text boxes
 function clearForm() {
     "use strict";
     $("name").value = "";
